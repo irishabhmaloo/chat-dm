@@ -1,7 +1,8 @@
 import socketIO from "socket.io-client";
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Join from './Component/Join/Join'
+import Join from './Component/Join'
+import Chat from "./Component/Chat";
 
 function App() {
   
@@ -12,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" Component={Join} />
-        <Route path="/chat" />
+        <Route path="/chat" Component={Chat}/>
       </Routes>
     </Router>
 
