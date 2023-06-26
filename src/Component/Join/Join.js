@@ -8,6 +8,9 @@ const Join = () => {
       <div className='JoinContainer'>
         <img src={logo} alt='logo'/>
         <h1>Chat-DM</h1>
+
+        <input type="text" id="JoinInput" placeholder='Enter your name' />
+        <button className='JoinBtn'>Login</button>
       </div>
     </div>
   )

@@ -8,8 +8,7 @@
 }
 
 .JoinContainer {
-    border: 1px solid white;
-    height: 50%;
+    /* border: 1px solid white; */
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -23,8 +22,33 @@
 .JoinContainer > h1 {
     color: white;   
     size: 2.5vmax;
-    width: 30vmax;
+    width: 25vmax;
     text-align: center;
     padding: 1vmax;
     border-bottom: 0.2vmax solid white; 
+}
+
+#JoinInput, .JoinBtn {
+    width: 25vmax;
+    padding: 0.8vmax;
+    border: none;
+    outline: none;
+    font-size: 1.2vmax;
+    margin: 1vmax;
+}
+
+#JoinInput, .JoinContainer > h1 {
+    box-sizing: border-box;
+}
+
+/* login button */
+.JoinBtn {
+    background-color: rgb(86, 162, 255);
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.JoinBtn:hover {
+    background-color: rgb(65, 90, 251);
 }
