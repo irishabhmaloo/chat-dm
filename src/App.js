@@ -1,18 +1,21 @@
 import socketIO from "socket.io-client";
 import './App.css';
-
-const ENDPOINT = 'http://localhost:4500/'; // address of server
-const socket = socketIO(ENDPOINT, {transports: ['websocket']});
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Join from './Component/Join/Join'
 
 function App() {
   
-  socket.on('connect', () => {
-    
-  });
-  
   return (
     <div className="App">
-      <h1>Working!</h1>
+      
+    {/* defining the routes */}
+    <Router>
+      <Routes>
+        <Route exact path="/" Component={Join} />
+        <Route path="/chat" />
+      </Routes>
+    </Router>
+
     </div>
   );
 }
