@@ -18,10 +18,11 @@ const Chat = () => {
       alert("Connection established!");
     });
 
+    socket.emit('joined', {user})
     return () => {
 
     }
-  }, [socket]);
+  }, []);
   
   return (
     <div className='chatPage'>
