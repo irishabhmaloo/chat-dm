@@ -9,18 +9,34 @@ const ENDPOINT = "http://localhost:4500";
 
 const Chat = () => {
 
-  // creating socket
-  const socket = socketIO(ENDPOINT, {transports: ['websocket']});
-
   // on connect
   useEffect(() => {
+
+    // creating socket
+    const socket = socketIO(ENDPOINT, {transports: ['websocket']});
+
     socket.on("connect", ()=>{
       alert("Connection established!");
     });
 
-    socket.emit('joined', {user})
-    return () => {
+    console.log(socket);
 
+    socket.emit('joined', {user});
+
+    socket.on('welcome', (data)=>{
+      console.log(data.user, data.message);
+    });
+
+    socket.on('userJoined', (data)=>{
+      console.log(data.user, data.message);
+    })
+
+    socket.on('userLeft' , (data) => {
+      console.log(data.user, data.message);
+    })
+    return () => {
+      socket.emit('userDisconnect');
+      socket.off();
     }
   }, []);
   
