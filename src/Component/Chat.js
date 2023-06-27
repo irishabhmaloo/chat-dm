@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {user} from './Join';
 import socketIO from 'socket.io-client';
+import "../Style/Chat.css";
 
 // endpoint = server URL
 const ENDPOINT = "http://localhost:4500";
