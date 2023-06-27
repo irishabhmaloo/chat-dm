@@ -30,6 +30,38 @@
 
 /* input area */
 .inputBox {
-    border :0.2vmax solid black;
     height: 10%;
+    display: flex;
+}
+
+#chatInput {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 2vmax;
+    box-sizing: border-box;
+    background-color: rgb(232, 243, 255);
+}
+
+.sendBtn {
+    background-color:  rgb(86, 162, 255);
+    color: white;
+    border: none;
+    width: 20%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sendBtn>img {
+    width: 3vmax;
+    filter: brightness(100) invert();
+    transition: all 0.3s;
+}
+
+.sendBtn:hover {
+    background-color: rgb(65, 139, 251);
+}
+
+.sendBtn:hover img {
+    transform: translateX(5px);
 }
