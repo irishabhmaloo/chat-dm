@@ -3,6 +3,7 @@ import {user} from './Join';
 import socketIO from 'socket.io-client';
 import "../Style/Chat.css";
 import sendLogo from '../Images/send.png';
+import Message from './Message';
 
 // endpoint = server URL
 const ENDPOINT = "http://localhost:4500";
@@ -66,7 +67,9 @@ const Chat = () => {
     <div className='chatPage'>
       <div className='chatContainer'>
         <div className='header'></div>
-        <div className='chatBox'></div>
+        <div className='chatBox'>
+          <Message message='{}'/>
+        </div>
         <div className='inputBox'>
           <input type='text' id='chatInput' />
           <button className='sendBtn' onClick={send}> <img src={sendLogo} alt="send logo" /> </button>
