@@ -26,6 +26,7 @@
     border :0.2vmax solid black;
     height: 80%;
     box-sizing: border-box;
+    /* overflow-y: auto; */
 }
 
 /* input area */
