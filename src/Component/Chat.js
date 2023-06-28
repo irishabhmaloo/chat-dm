@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {user} from './Join';
 import socketIO from 'socket.io-client';
 import "../Style/Chat.css";
@@ -6,17 +6,28 @@ import sendLogo from '../Images/send.png';
 
 // endpoint = server URL
 const ENDPOINT = "http://localhost:4500";
+let socket;
 
 const Chat = () => {
+
+  const [id, setId] = useState("");
+  
+  // chat function
+  const send = () => {
+    const message = document.getElementById('inputBox').value;
+    socket.emit('message' , {message, id});
+    document.getElementById('inputBox').value = '';
+  }
 
   // on connect
   useEffect(() => {
 
     // creating socket
-    const socket = socketIO(ENDPOINT, {transports: ['websocket']});
+    socket = socketIO(ENDPOINT, {transports: ['websocket']});
 
     socket.on("connect", ()=>{
       alert("Connection established!");
+      setId(socket.id);
     });
 
     console.log(socket);
@@ -39,6 +50,17 @@ const Chat = () => {
       socket.off();
     }
   }, []);
+
+  // recieve message
+  useEffect(() => {
+    socket.on('sendMessage', (data)=>{
+      console.log(data.user, data.message, data.id);
+    })
+
+    return () => {
+
+    }
+  }, []);
   
   return (
     <div className='chatPage'>
@@ -47,7 +69,7 @@ const Chat = () => {
         <div className='chatBox'></div>
         <div className='inputBox'>
           <input type='text' id='chatInput' />
-          <button className='sendBtn'> <img src={sendLogo} alt="send logo" /> </button>
+          <button className='sendBtn' onClick={send}> <img src={sendLogo} alt="send logo" /> </button>
         </div>
       </div>
       
