@@ -5,6 +5,7 @@ import "../Style/Chat.css";
 import sendLogo from '../Images/send.png';
 import Message from './Message';
 import ReactScrollToBottom from 'react-scroll-to-bottom';
+import closeIcon from '../Images/closeIcon.png'
 
 // endpoint = server URL
 const ENDPOINT = "http://localhost:4500";
@@ -75,7 +76,12 @@ const Chat = () => {
   return (
     <div className='chatPage'>
       <div className='chatContainer'>
-        <div className='header'></div>
+        <div className='header'>
+          <h2>Chat-DM</h2>
+          <a href="/">
+            <img src={closeIcon} alt="Close" />
+          </a>
+        </div>
         <ReactScrollToBottom className='chatBox'>
           {
             messages.map((item,index) => <Message 
