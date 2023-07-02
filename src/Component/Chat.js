@@ -87,7 +87,7 @@ const Chat = () => {
             messages.map((item,index) => <Message 
                                             message={item.message}
                                             user={item.id===id ? '' : item.user} 
-                                            messageClass={item.id===id ? 'right' : 'left'}/>)
+                                            messageClass={item.id===id ? 'right' : item.user==='Admin'? 'center' : 'left'}/>)
           }
         </ReactScrollToBottom>
         <div className='inputBox'>

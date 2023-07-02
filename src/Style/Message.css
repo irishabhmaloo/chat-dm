@@ -18,3 +18,12 @@
     float: left;
     background-color: rgb(255, 86, 86);
 }
+
+.center {
+    margin: 1.8vmax 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(152, 153, 153);
+    color: rgb(0, 0, 0);
+}
