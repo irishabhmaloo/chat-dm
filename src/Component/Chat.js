@@ -19,9 +19,9 @@ const Chat = () => {
   
   // chat function
   const send = () => {
-    const message = document.getElementById('inputBox').value;
+    const message = document.getElementById('chatInput').value;
     socket.emit('message' , {message, id});
-    document.getElementById('inputBox').value = '';
+    document.getElementById('chatInput').value = '';
   }
 
   // on connect
@@ -67,9 +67,10 @@ const Chat = () => {
     })
 
     return () => {
-
+      // not rendering array for each element but the latest entry
+      socket.off();
     }
-  }, []);
+  }, [messages]); //show effect when messages array is changed
   
   return (
     <div className='chatPage'>
@@ -77,7 +78,10 @@ const Chat = () => {
         <div className='header'></div>
         <ReactScrollToBottom className='chatBox'>
           {
-            messages.map((item,index) => <Message message={item.message} />)
+            messages.map((item,index) => <Message 
+                                            message={item.message}
+                                            user={item.id===id ? '' : item.user} 
+                                            messageClass={item.id===id ? 'right' : 'left'}/>)
           }
         </ReactScrollToBottom>
         <div className='inputBox'>
