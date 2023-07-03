@@ -1,3 +1,70 @@
 body {
     margin: 0
 }
+
+@media (max-aspect-ratio: 7/10) {
+    /* join page */
+    .JoinPage {
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .JoinContainer {
+        width: 100%;
+    } 
+
+    .JoinContainer > img {
+        width: 30vw !important;    
+    }
+    
+    .JoinContainer > h1 {
+        font-size: 6vw !important;
+        color: white;   
+        size: 2.5vmax;
+        width: 55vw !important;
+        padding: 3vmax;
+    }
+
+    #JoinInput, .JoinBtn {
+        width: 65vw !important;
+        padding: 4w;
+        font-size: 5vw !important;
+        margin: 5vw !important;
+    }
+
+    /* chat page */
+    .chatContainer {
+        background-color: white;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .header>h2 {
+        margin: 4vw !important;
+        font-size: 7vw !important;
+    }
+    
+    .header img {
+        margin: 6vw !important;
+        transform: scale(1.6) !important;
+    }
+
+    .header img:hover {
+        transform: scale(2.3) !important;
+    }
+
+    #chatInput {
+        padding: 4vw;
+        font-size: 4vw !important;
+    }
+    
+    /* message box */
+    .messageBox {
+        padding: 3vw !important;
+        margin: 3vw !important;
+        border-radius: 1.5vw !important;
+        font-size: 3.7vw !important;
+    }
+}
