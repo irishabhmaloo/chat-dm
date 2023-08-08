@@ -17,7 +17,7 @@
 /* header */
 .header {
     background-color:  rgb(86, 162, 255);
-    height: 10%;
+    height: 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,15 +26,16 @@
 
 .header>h2 {
     color: white;
-    font-size: 1.5vmax;
+    font-size: 2vmax;
 }
 
 .header img {
     transition: all 0.3s;
+    transform: scale(1.5);
 }
 
 .header img:hover {
-    transform: scale(1.3);
+    transform: scale(1.8);
     cursor: pointer;
 }
 
@@ -43,21 +44,25 @@
     /* border :0.2vmax solid black; */
     height: 80%;
     box-sizing: border-box;
+    padding-top: 0.4vmax;
     /* overflow-y: auto; */
 }
 
 /* input area */
 .inputBox {
-    height: 10%;
+    /* border: 1px solid yellow; */
+    height: fit-content;
+    width: 100%;
     display: flex;
     box-sizing: border-box;
 }
 
 #chatInput {
+
     width: 80%;
     border: none;
     outline: none;
-    padding: 2vmax;
+    padding: 1.2vmax;
     box-sizing: border-box;
     background-color: rgb(232, 243, 255);
     border-top: 0.2vmax solid rgba(57, 57, 57, 0.466);
@@ -67,13 +72,17 @@
     background-color:  rgb(86, 162, 255);
     color: white;
     border: none;
-    width: 20%;
+    width: 21%;
+    height: auto;
     cursor: pointer;
     transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sendBtn>img {
-    width: 3vmax;
+    width: 2.5vmax;
     filter: brightness(100) invert();
     transition: all 0.3s;
 }
