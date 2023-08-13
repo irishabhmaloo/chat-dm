@@ -2,7 +2,7 @@ body {
   margin: 0
 }
 
-@media (max-aspect-ratio: 10/7) {
+@media (max-aspect-ratio: 9/10) {
     /* join page */
     .JoinPage {
         display: flex;
